@@ -1,0 +1,12 @@
+---
+  - name: "Copy files from control nodes to the target clients"
+    hosts: all
+    tasks:
+      - name: "Transferring files to remote targets"
+        become: true
+        copy:
+          src: /home/hasnainzafar99/hasnain.txt
+          dest: /
+          owner: hasnainzafar99
+          group: hasnainzafar99
+          mode: 0644
