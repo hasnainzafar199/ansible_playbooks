@@ -1,0 +1,10 @@
+---
+  - name: "First pinging to check connectivity and then printing 'Hello World' with debug module."
+    hosts: all
+    tasks:
+      - name: "Checking connectivity"
+        ping:
+
+      - name: "Print 'Hello World'"
+        debug:
+          msg: "Hello World"
