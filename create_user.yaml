@@ -1,0 +1,9 @@
+---
+  - name: "Creating a new user in targets machines"
+    hosts: all
+    tasks:
+      - name: "Creating a user Zafar Iqbal"
+        user:
+          name: Zafar_Iqbal
+          home: /home/zafariqbal
+          shell: /bin/bash
