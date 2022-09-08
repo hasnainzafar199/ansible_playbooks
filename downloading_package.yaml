@@ -1,0 +1,15 @@
+---
+  - name: "Creating a directory and downloading a package inside that directory."
+    hosts: localhost
+    tasks:
+      - name: "Creating a directory /opt/tomcat"
+        file:
+          path: /opt/putty
+          state: directory
+          mode: 0755
+          owner: hasnainzafar99
+          group: hasnainzafar99
+      - name: "Downloading a tomcat package from internet and storing it in /opt/tomcat"
+        get_url:
+          url: https://the.earth.li/~sgtatham/putty/latest/putty-0.77.tar.gz
+          dest: /opt/putty
