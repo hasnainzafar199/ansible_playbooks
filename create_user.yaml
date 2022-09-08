@@ -4,6 +4,6 @@
     tasks:
       - name: "Creating a user Zafar Iqbal"
         user:
-          name: Zafar_Iqbal
-          home: /home/zafariqbal
+          name: george
+          home: /home/george
           shell: /bin/bash
