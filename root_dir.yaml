@@ -1,0 +1,6 @@
+---
+  - name: "Creating a directory in root directory of all targets"
+    hosts: all
+    tasks:
+      - name: "Creating a directory in target's root directory"
+        shell: "touch hassan.txt"
