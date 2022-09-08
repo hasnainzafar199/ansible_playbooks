@@ -1,0 +1,14 @@
+---
+  - name: "Cronjob Playbook"
+    hosts: all
+    tasks:
+      - name: "This is a Cronjob for cronjob.sh"
+        cron:
+          name: "Job is schedule for cronjob.sh"
+          minute: "0"
+          hour: "10"
+          day: "*"
+          month: "*"
+          weekday: "*"
+          user: root
+          job: "/root/cronjob.sh"
