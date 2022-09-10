@@ -1,0 +1,12 @@
+---
+  - name: "Find a processs running on targets machines and kill them"
+    hosts: all
+    tasks:
+      - name: "Find the top command running on targest machines and store their PID in a variable called register"
+        ignore_errors: true
+        shell: "ps -ef | grep top | awk '{print $2}'"
+        register: kill_running_process
+      - name: "Kill running process top command with its PID"
+        ignore_errors: true
+        shell: "kill {{ item }}"
+        with_items: "{{ kill_running_process.stdout_lines }}"
