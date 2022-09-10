@@ -1,0 +1,18 @@
+---
+  - name: "An example of --start-at-task taskname"
+    hosts: all
+    tasks:
+      - name: "Install httpd"
+        yum:
+          name: httpd
+          state: present
+      - name: "Start httpd"
+        service:
+          name: httpd
+          state: started
+       
+#To start at task 'Install httpd'
+#ansible-playbook startattask.yaml --start-at-task 'Install httpd'
+
+#To start at task 'Start httpd'
+#ansible-playbook startattask.yaml --start-at-task 'Start httpd'
