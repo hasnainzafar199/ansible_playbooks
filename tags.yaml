@@ -1,0 +1,14 @@
+---
+ - name: "Install and Start the httpd Service"
+   hosts: all
+   tasks:
+     - name: "Install httpd"
+       yum:
+        name: httpd
+        state: present
+       tags: i-httpd
+     - name: "Start httpd"
+       service:
+        name: httpd
+        state: started
+       tags: s-httpd
