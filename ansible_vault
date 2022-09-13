@@ -1,0 +1,17 @@
+#Creating a ansible-vault yaml file and setting a password.
+ansible-vault create install_httpd_package.yaml
+
+#Viewing a ansible-vault yaml file.
+ansible-vault view install_httpd_package.yaml
+
+#Editing a ansible-vault yaml file.
+ansible-vault edit install_httpd_package.yaml
+
+#Running a ansible-vault yaml file.
+ansible-vault install_httpd_package.yaml --ask-vault-pass
+
+#Getting help for ansible-vault 
+ansible-vault --help
+
+#Encrypting existing playbook
+ansible-vault encrypt playbook_name
