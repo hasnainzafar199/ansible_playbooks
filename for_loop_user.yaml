@@ -1,0 +1,11 @@
+---
+  - name: "Creating multiple users with for loop"
+    hosts: localhost
+    tasks:
+      - name: "Creating multiple users with for loop"
+        user:
+          name: "{{ item }}"
+        loop:
+          - Hasnain
+          - Hassan
+          - Walid
