@@ -1,0 +1,22 @@
+#Encrypting a string "httpd" for a playbook
+ansible-vault encrypt_string httpd
+
+-----------------------------------------------
+
+#Creating ansible playbook with secret key of httpd
+---
+ - name: "Debugging httpd"
+   hosts: localhost
+   vars:
+    secret: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64623561386137346563613734633263333261366431323939633735396335613133646164333933
+          3664656438306466306161323031353837643535313637350a653235346662653739633933376532
+          34303735633534653837326136323862373738333738633933323834353664656464376231333332
+          3231306561313335300a653361666666396330376261653866643662303533373231326337396335
+          3864
+
+   tasks:
+    - name: "Decrypting httpd"
+      debug:
+        var: secret
